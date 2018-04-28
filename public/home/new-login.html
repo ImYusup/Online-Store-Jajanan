@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
+    <title>Document</title>
+    
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <div class="bg-gold mw6 center">
+        <p>Please login here</p>
+        <label class="white" for="username"></label>
+        <input id = "username" for="username" type="text">
+        <label for="password"></label>
+        <input id = "password" for="password" type="text" />
+        <button id="btnLogin" class="pa2 dim bg-black-90 white bw0 br br4 pointer">
+            LOGIN
+        </button>
+    </div>
+    <script>
+        const login = function () {
+            let username = $('#username').val()
+            let passwordLogin = $('#password').val()
+            const data = {username: username, passwordLogin: passwordLogin}
+            console.log(data)
+            fetch(
+                'http://localhost:5000/api/user/login', 
+                {
+                    body: JSON.stringify(data),
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                }
+            ).then(function(response) {
+                return response.json()
+            }).then(result => {
+                console.log(result)
+            })
+        }
+
+        
+
+        $(document).ready(function() {
+            $('#password').val('1')
+            $('#username').val('1')
+            $('#btnLogin').click(function() {
+                login()
+            })    
+        })
+    </script>    
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "name": "Online-Store-Minimarket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sample.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chance": "^1.0.13",
+    "chart.js": "^2.7.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "mysql2": "^1.5.3",
+    "nodemon": "^1.17.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.6",
+    "sequelize-cli": "^4.0.0",
+    "serve": "^6.5.5",
+    "serve-static": "^1.13.2",
+    "vue": "^2.5.16",
+    "vue-chartjs": "^3.3.1"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
+  },
+  "scripts": {
+    "startnodemon": "nodemon server.js",
+    "startseed": "node_modules/.bin/sequelize db:seed --seed",
+    "undoseed": "node_modules/.bin/sequelize db:seed:undo",
+    "startmigrate": "node_modules/.bin/sequelize db:migrate",
+    "undomigrate": "node_modules/.bin/sequelize db:migrate:undo",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
